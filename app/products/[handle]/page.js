@@ -1,7 +1,7 @@
 import { getProductByHandle } from "@/lib/commerce";
 
 export default async function ProductPage({ params }) {
-    const { handle } = params;
+    const { handle } = await params;
     const product = await getProductByHandle(handle);
 
     if (!product) {
