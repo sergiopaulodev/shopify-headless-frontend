@@ -10,9 +10,4 @@ export default async function ProductPage({ params }) {
     }
 
     return <ProductDetail product={product} />;
-
-        // <main>
-        //     <h1>{product.title}</h1>
-        //     <p>{product.description}</p>
-        // </main>
 };
