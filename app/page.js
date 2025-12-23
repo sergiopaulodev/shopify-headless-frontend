@@ -1,4 +1,5 @@
 import { getProducts } from "@/lib/commerce";
+import { ProductList } from "@/components/products/ProductList";
 
 export default async function HomePage() {
     const products = await getProducts();
@@ -6,8 +7,8 @@ export default async function HomePage() {
     return (
         <main>
             <h1>Products</h1>
-
-            <ul>
+            <ProductList products={products}/>
+            {/* <ul>
                 {products.map((product) => (
                     
                         <li key={product.id}>
@@ -19,7 +20,7 @@ export default async function HomePage() {
                         ) 
                     )
                 }
-            </ul>
+            </ul> */}
         </main>
     );
 }

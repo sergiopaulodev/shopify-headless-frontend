@@ -1,4 +1,5 @@
 import { getProductByHandle } from "@/lib/commerce";
+import { ProductDetail } from "@/components/products/ProductDetail";
 
 export default async function ProductPage({ params }) {
     const { handle } = await params;
@@ -8,10 +9,10 @@ export default async function ProductPage({ params }) {
         return <p>Product not found</p>;
     }
 
-    return (
-        <main>
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
-        </main>
-    );
+    return <ProductDetail product={product} />;
+
+        // <main>
+        //     <h1>{product.title}</h1>
+        //     <p>{product.description}</p>
+        // </main>
 };
