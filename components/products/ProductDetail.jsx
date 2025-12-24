@@ -1,4 +1,6 @@
 export function ProductDetail({ product }) {
+    const hasImages = product.images && product.images.lenght > 0;
+
     return (
         <article>
             <h1>{product.title}</h1>
@@ -11,6 +13,19 @@ export function ProductDetail({ product }) {
             ) : (
                 <p>Precio no disponible</p>
             )
+        }
+        
+        {hasImages ? (
+            <img
+                src={product.images[0].url}
+                alt={product.images[0].alt ?? product.title}
+            />
+        ) : (
+            <div className="product-image--placeholder">
+                Imagen no disponible
+            </div>
+        )
+
         }
         
         </article>
