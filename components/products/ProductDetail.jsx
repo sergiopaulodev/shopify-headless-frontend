@@ -1,5 +1,5 @@
 export function ProductDetail({ product }) {
-    const hasImages = product.images && product.images.lenght > 0;
+    const hasImages = product.images && product.images.length > 0;
 
     return (
         <article>
@@ -8,7 +8,7 @@ export function ProductDetail({ product }) {
         
         {product.price ? (
             <p>
-                {product.price.amount} {product.price.currencyCode}
+                {product.price.amount} {product.price.currency}
             </p>
             ) : (
                 <p>Precio no disponible</p>
