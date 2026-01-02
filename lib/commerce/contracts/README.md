@@ -1,3 +1,46 @@
+## Overview
+
+This project is a headless ecommerce frontend built with Next.js App Router.
+
+It implements a domain-driven architecture with a custom commerce layer that decouples the frontend from any specific ecommerce provider (e.g. Shopify).
+
+## Implemented Domains (v1)
+
+- Product (read-only)
+- Collection (read-only)
+- Cart (read-only)
+- Search (read-only)
+
+## Architecture
+
+- Frontend consumes only domain facades (`lib/commerce`)
+- External providers are isolated via adapters
+- Domain contracts are explicitly defined and validated with Zod
+- UI components contain no business logic
+
+## Scope & Limitations
+
+This project intentionally does NOT implement:
+
+- Checkout flow
+- Payments
+- Inventory management
+- Discounts or promotions
+- User authentication
+- Persistence strategy
+- SEO optimization
+- Performance optimizations
+
+## Project Status
+
+This project is considered a technical MVP and is intentionally frozen.
+
+Further development would require:
+- Versioned domain contracts (v2+)
+- Redefinition of scope
+- Explicit product requirements
+
+
 # Product Contract v1
 
 This document defines the stable Product domain contract.
